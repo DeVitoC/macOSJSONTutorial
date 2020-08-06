@@ -1,0 +1,13 @@
+[
+    {
+        "name" : "Stone Pickaxe",
+        "first_item_info" : {
+            "first_item" : "Stone",
+            "first_amount" : 2,
+        },
+        "second_item_info" : {
+            "second_item" : "Stick",
+            "second_amount" : 1,
+        }
+    }
+]

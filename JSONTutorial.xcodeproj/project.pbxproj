@@ -11,6 +11,10 @@
 		E26D9C3A24DC052400393911 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D9C3924DC052400393911 /* ViewController.swift */; };
 		E26D9C3C24DC052700393911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26D9C3B24DC052700393911 /* Assets.xcassets */; };
 		E26D9C3F24DC052700393911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26D9C3D24DC052700393911 /* Main.storyboard */; };
+		E26D9C4D24DC092800393911 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D9C4C24DC092800393911 /* Model.swift */; };
+		E26D9C4F24DC100D00393911 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D9C4E24DC100D00393911 /* RecipesViewController.swift */; };
+		E26D9C5124DC11E500393911 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D9C5024DC11E500393911 /* ModelController.swift */; };
+		E26D9C5424DC121900393911 /* modelExample.json in Resources */ = {isa = PBXBuildFile; fileRef = E26D9C5324DC121900393911 /* modelExample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		E26D9C3E24DC052700393911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E26D9C4024DC052700393911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26D9C4124DC052700393911 /* JSONTutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSONTutorial.entitlements; sourceTree = "<group>"; };
+		E26D9C4C24DC092800393911 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E26D9C4E24DC100D00393911 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		E26D9C5024DC11E500393911 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		E26D9C5324DC121900393911 /* modelExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = modelExample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +61,66 @@
 		E26D9C3624DC052400393911 /* JSONTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				E26D9C3724DC052400393911 /* AppDelegate.swift */,
-				E26D9C3924DC052400393911 /* ViewController.swift */,
-				E26D9C3B24DC052700393911 /* Assets.xcassets */,
-				E26D9C3D24DC052700393911 /* Main.storyboard */,
-				E26D9C4024DC052700393911 /* Info.plist */,
+				E26D9C4B24DC057C00393911 /* Models */,
+				E26D9C4A24DC057300393911 /* Views */,
+				E26D9C4924DC056700393911 /* View Controllers */,
+				E26D9C4824DC055E00393911 /* Controllers */,
+				E26D9C4724DC053400393911 /* Resources */,
 				E26D9C4124DC052700393911 /* JSONTutorial.entitlements */,
 			);
 			path = JSONTutorial;
+			sourceTree = "<group>";
+		};
+		E26D9C4724DC053400393911 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C5224DC120500393911 /* JSON */,
+				E26D9C3724DC052400393911 /* AppDelegate.swift */,
+				E26D9C3B24DC052700393911 /* Assets.xcassets */,
+				E26D9C4024DC052700393911 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E26D9C4824DC055E00393911 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C5024DC11E500393911 /* ModelController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E26D9C4924DC056700393911 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C3924DC052400393911 /* ViewController.swift */,
+				E26D9C4E24DC100D00393911 /* RecipesViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E26D9C4A24DC057300393911 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C3D24DC052700393911 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E26D9C4B24DC057C00393911 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C4C24DC092800393911 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E26D9C5224DC120500393911 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E26D9C5324DC121900393911 /* modelExample.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26D9C3C24DC052700393911 /* Assets.xcassets in Resources */,
+				E26D9C5424DC121900393911 /* modelExample.json in Resources */,
 				E26D9C3F24DC052700393911 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D9C4F24DC100D00393911 /* RecipesViewController.swift in Sources */,
+				E26D9C5124DC11E500393911 /* ModelController.swift in Sources */,
+				E26D9C4D24DC092800393911 /* Model.swift in Sources */,
 				E26D9C3A24DC052400393911 /* ViewController.swift in Sources */,
 				E26D9C3824DC052400393911 /* AppDelegate.swift in Sources */,
 			);
@@ -274,7 +338,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8825K9HH49;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = JSONTutorial/Info.plist;
+				INFOPLIST_FILE = JSONTutorial/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -294,7 +358,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8825K9HH49;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = JSONTutorial/Info.plist;
+				INFOPLIST_FILE = JSONTutorial/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
