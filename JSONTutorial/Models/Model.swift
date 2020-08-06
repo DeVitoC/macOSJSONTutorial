@@ -58,7 +58,7 @@ struct Model: Codable {
     enum ModelKeys: String, CodingKey {
         case name = "name"
         case firstItemInfo = "first_item_info"
-        case secondItemInfo = "seond_item_info"
+        case secondItemInfo = "second_item_info"
     }
 
     enum FirstItemKeys: String, CodingKey {
@@ -67,7 +67,7 @@ struct Model: Codable {
     }
 
     enum SecondItemKeys: String, CodingKey {
-        case secondItem = "sescond_item"
+        case secondItem = "second_item"
         case secondAmount = "second_amount"
     }
 }

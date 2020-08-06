@@ -12,6 +12,12 @@ class RecipesViewController: NSViewController {
 
     // MARK: - Properties
     var modelController: ModelController?
+    override var representedObject: Any? {
+        didSet {
+            modelController?.fetchFromJSONFile()
+            reloadFileList()
+        }
+    }
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: NSTableView!
@@ -19,7 +25,14 @@ class RecipesViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        tableView.delegate = self
+        tableView.dataSource = self
+        modelController?.fetchFromJSONFile()
+        reloadFileList()
+    }
+
+    func reloadFileList() {
+        tableView.reloadData()
     }
     
 }
@@ -40,7 +53,33 @@ extension RecipesViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let item = modelController?.models[row] else { return nil }
+        var cellIdentifier: String = ""
+        var text: String = ""
 
-        return NSView()
+        if tableColumn == tableView.tableColumns[0] {
+            text = item.name
+            cellIdentifier = CellIdentifiers.RecipeCell
+        } else if tableColumn == tableView.tableColumns[1] {
+            text = item.firstItem
+            cellIdentifier = CellIdentifiers.FirstItemCell
+        } else if tableColumn == tableView.tableColumns[2] {
+            text = "\(item.firstAmount)"
+            cellIdentifier = CellIdentifiers.FirstAmountCell
+        } else if tableColumn == tableView.tableColumns[3] {
+            text = item.secondItem
+            cellIdentifier = CellIdentifiers.SecondItemCell
+        } else if tableColumn == tableView.tableColumns[4] {
+            text = "\(item.secondAmount)"
+            cellIdentifier = CellIdentifiers.SecondAmountCell
+        }
+
+        let cellIdentifier2 = NSUserInterfaceItemIdentifier(cellIdentifier)
+
+        if let cell = tableView.makeView(withIdentifier: cellIdentifier2, owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = text
+            return cell
+        }
+        return nil
     }
 }

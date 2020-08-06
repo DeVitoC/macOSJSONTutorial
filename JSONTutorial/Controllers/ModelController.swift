@@ -15,13 +15,17 @@ class ModelController {
         let path = fm.urls(for: .desktopDirectory, in: .userDomainMask)[0]
         return path
     }()
+    let bundle = Bundle.main
+    lazy var path1 = bundle.path(forResource: "modelExample", ofType: "json")
     let filename = "modelExample.json"
 
     func fetchFromJSONFile() {
         let jsonDecoder = JSONDecoder()
 
         // Get JSON and decode it
-        guard let jsonData = NSData(contentsOfFile: path.appendingPathComponent(filename).absoluteString) else { return }
+//        guard let jsonData = NSData(contentsOfFile: path.appendingPathComponent(filename).absoluteString) else { return }
+        guard let jsonData = NSData(contentsOfFile: path1!) else { return }
+
 
         do {
             let data = Data(jsonData)
@@ -42,7 +46,7 @@ class ModelController {
             let startData = Data(base64Encoded: startString) else { return }
 
         do {
-            if fm.fileExists(atPath: path.appendingPathComponent(filename).absoluteString) {
+            if !fm.fileExists(atPath: path.appendingPathComponent(filename).absoluteString) {
                 try startData.write(to: path.appendingPathComponent(filename))
             }
             let fileHandle = try FileHandle(forWritingTo: path.appendingPathComponent(filename))

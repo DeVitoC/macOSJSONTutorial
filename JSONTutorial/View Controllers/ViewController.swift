@@ -48,6 +48,7 @@ class ViewController: NSViewController {
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let recipesVC = segue.destinationController as? RecipesViewController {
             recipesVC.modelController = modelController
+            modelController.fetchFromJSONFile()
         }
     }
 
